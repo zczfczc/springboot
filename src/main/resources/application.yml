@@ -1,0 +1,7 @@
+spring:
+  application:
+#    服务名称
+    name: project
+  profiles:
+#    active: prd
+    active: dev
