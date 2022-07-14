@@ -4,7 +4,6 @@ import cn.zfc.base.commons.service.impl.BaseServiceImpl;
 import cn.zfc.entity.SysRoleMenu;
 import cn.zfc.mapper.SysRoleMenuMapper;
 import cn.zfc.service.SysRoleMenuService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

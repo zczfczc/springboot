@@ -2,7 +2,6 @@ package cn.zfc.service;
 
 import cn.zfc.base.commons.service.BaseService;
 import cn.zfc.entity.SysRole;
-import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * <p>

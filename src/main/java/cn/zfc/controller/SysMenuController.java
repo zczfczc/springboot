@@ -3,11 +3,8 @@ package cn.zfc.controller;
 import cn.zfc.base.commons.Result.R;
 import cn.zfc.base.commons.controller.BaseController;
 import cn.zfc.entity.SysMenu;
-import cn.zfc.entity.SysRole;
-import cn.zfc.entity.SysUser;
 import cn.zfc.service.*;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

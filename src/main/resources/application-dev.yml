@@ -47,4 +47,8 @@ logging:
        zfc:
          mapper: debug
 
-
+cn:
+ jwt:
+  header: Authorization
+  expire: 604800
+  secret: da43fa7dcb1d48709f749b36d196652f

@@ -1,4 +1,4 @@
-package cn.zfc.base.untils;
+package cn.zfc.base.utils;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
