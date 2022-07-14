@@ -6,13 +6,22 @@
     <springProfile name="prd">
         <property name="LOG_HOME" value="/root/data/projectLogs/logs/"></property>
     </springProfile>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
     <appender name="stdont" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>
                 %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n
             </pattern>
         </layout>
+        <encoder>
+            <Pattern>${CONSOLE_LOG_PATTERN}</Pattern>
+            <!-- 设置字符集 -->
+            <charset>UTF-8</charset>
+        </encoder>
     </appender>
+
     <!--  配置我们的日志以天进行生成  -->
     <appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">

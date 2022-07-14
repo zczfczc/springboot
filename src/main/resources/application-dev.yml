@@ -3,6 +3,9 @@ server:
   port: 9098
 
 spring:
+  output:
+    ansi:
+      enabled: always
   datasource:
     url: "jdbc:mysql://127.0.0.1:3306/secure?useUnicode=true&characterEncoding=UTF-8&useSSL=false"
     username: root
