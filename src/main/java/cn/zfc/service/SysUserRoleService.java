@@ -1,5 +1,6 @@
 package cn.zfc.service;
 
+import cn.zfc.base.commons.service.BaseService;
 import cn.zfc.entity.SysUserRole;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -11,6 +12,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author zfc
  * @since 2022-07-12
  */
-public interface SysUserRoleService extends IService<SysUserRole> {
+public interface SysUserRoleService extends BaseService<SysUserRole> {
 
 }

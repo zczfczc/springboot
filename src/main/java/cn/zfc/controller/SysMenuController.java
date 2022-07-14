@@ -3,7 +3,9 @@ package cn.zfc.controller;
 import cn.zfc.base.commons.Result.R;
 import cn.zfc.base.commons.controller.BaseController;
 import cn.zfc.entity.SysMenu;
-import cn.zfc.service.SysMenuService;
+import cn.zfc.entity.SysRole;
+import cn.zfc.entity.SysUser;
+import cn.zfc.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +14,7 @@ import java.util.List;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author zfc
@@ -21,12 +23,12 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/sysMenu")
-public class SysMenuController extends BaseController<SysMenu> {
-    @Autowired
-    private SysMenuService  sysMenuService;
+public class SysMenuController extends BaseController<SysMenuService, SysMenu> {
+
     @PostMapping("/test")
-    public R<List<SysMenu>> getSys(){
-        List<SysMenu> list = sysMenuService.list();
-        return R.success(list);
+    public R<List<SysMenu>> getSysMenu(){
+        List<SysMenu> list = baseService.list();
+        return  R.success(list);
     }
+
 }

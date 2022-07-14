@@ -1,5 +1,6 @@
 package cn.zfc.service.impl;
 
+import cn.zfc.base.commons.service.impl.BaseServiceImpl;
 import cn.zfc.entity.SysMenu;
 import cn.zfc.mapper.SysMenuMapper;
 import cn.zfc.service.SysMenuService;
@@ -18,6 +19,6 @@ import org.springframework.stereotype.Service;
  */
 @Slf4j
 @Service
-public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> implements SysMenuService {
+public class SysMenuServiceImpl extends BaseServiceImpl<SysMenuMapper, SysMenu> implements SysMenuService {
 
 }

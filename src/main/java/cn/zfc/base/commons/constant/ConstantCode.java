@@ -3,7 +3,7 @@ package cn.zfc.base.commons.constant;
 /**
  * 返回状态码常量
  * @auther:zfc
- * @Date:2022/7/11-14:49
+ * @Date:2022-7-11 14:49
  **/
 public class ConstantCode {
     //  成功返回状态码
