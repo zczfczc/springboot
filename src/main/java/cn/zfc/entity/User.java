@@ -22,14 +22,14 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @AllArgsConstructor
 @TableName(value = "sys_user", autoResultMap = true)
-public class SysUser extends BaseEntity {
+public class User extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
     @TableField(value = "username")
     private String username;
 
-    @TableField(value = "last_login")
+    @TableField(value = "password")
     private String password;
 
     @TableField(value = "avatar")

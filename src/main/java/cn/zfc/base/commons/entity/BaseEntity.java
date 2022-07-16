@@ -25,7 +25,7 @@ public class BaseEntity implements Serializable {
     private static final long serialVersionUID = 3L;
 
     @TableId(value = "id", type = IdType.INPUT)
-    protected Integer id;
+    protected Long id;
 
     @TableField(value = "create_time", fill = FieldFill.INSERT)
     protected LocalDateTime createTime;

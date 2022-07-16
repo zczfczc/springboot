@@ -2,18 +2,18 @@ package cn.zfc.base.config;
 
 import cn.zfc.base.filter.CaptchaFilter;
 import cn.zfc.base.filter.JwtAuthenticationFilter;
-import cn.zfc.base.security.JwtAccessDeniedHandler;
-import cn.zfc.base.security.JwtAuthenticationEntryPoint;
-import cn.zfc.base.security.LoginFailureHandler;
-import cn.zfc.base.security.LoginSuccessHandler;
+import cn.zfc.base.security.*;
+import cn.zfc.service.base.UserDetailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
@@ -34,10 +34,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
     @Autowired
     private JwtAccessDeniedHandler jwtAccessDeniedHandler;
+    @Autowired
+    private UserDetailServiceImpl userDetailsService;
 
     @Bean
     JwtAuthenticationFilter jwtAuthenticationFilter() throws Exception {
         return new JwtAuthenticationFilter(authenticationManager());
+    }
+
+    @Bean
+    BCryptPasswordEncoder bCryptPasswordEncoder(){
+        return new BCryptPasswordEncoder();
     }
 
     // 访问白名单
@@ -66,5 +73,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilter(jwtAuthenticationFilter())
                 .addFilterBefore(captchaFilter, UsernamePasswordAuthenticationFilter.class);
 
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService);
     }
 }

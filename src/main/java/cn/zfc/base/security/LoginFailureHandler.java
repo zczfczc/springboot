@@ -28,7 +28,7 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
         // 获取返回流
         ServletOutputStream outputStream = response.getOutputStream();
         // 写入失败数据
-        outputStream.write(JSONUtil.toJsonStr(R.fail(e.getMessage())).getBytes(StandardCharsets.UTF_8));
+        outputStream.write(JSONUtil.toJsonStr(R.fail("用户名或者密码错误!")).getBytes(StandardCharsets.UTF_8));
         outputStream.flush();
         outputStream.close();
     }
