@@ -2,10 +2,8 @@ package cn.zfc.controller;
 
 import cn.zfc.base.commons.Result.R;
 import cn.zfc.base.commons.controller.BaseController;
-import cn.zfc.base.commons.entity.BaseEntity;
-import cn.zfc.entity.SysUser;
 import cn.zfc.entity.User;
-import cn.zfc.service.SysUserService;
+import cn.zfc.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -23,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/sysUser")
-public class UserController extends BaseController<SysUserService<BaseEntity>, User> {
+public class UserController extends BaseController<UserService, User> {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
